@@ -152,13 +152,6 @@ Responsabilidades:
 - `Promise.allSettled` para tolerancia a fallos parciales
 - `localStorage` + Service Worker para experiencia offline mas robusta
 
-## Problemas reales que resolvi
-
-- El proyecto venia con una plantilla base de Vite, asi que se reconstruyo la app completa.
-- Habia una incompatibilidad previa entre Vite y `@vitejs/plugin-react`, por eso se simplifico [vite.config.ts]
-- La ruta manual `top/:id` no existia y podia parecer error; ahora redirige a `story/:id`.
-- El precache del service worker incluia `/top`, lo que podia romper la instalacion en algunos escenarios; se corrigio.
-- Antes una sola request fallida podia botar toda la vista; ahora eso no pasa.
 
 ## Como correr el proyecto
 
