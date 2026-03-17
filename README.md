@@ -2,6 +2,9 @@
 
 Aplicacion frontend construida con React, TypeScript, React Router y Material UI para consumir la API oficial de Hacker News.
 
+## Demostración
+[![Ver demo](./technnical-interview.png)](./technnical-interview.mp4)
+
 ## Objetivo
 
 La app cumple con estos puntos del challenge:
