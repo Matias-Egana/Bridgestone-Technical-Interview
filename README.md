@@ -3,7 +3,7 @@
 Aplicación frontend construida con React, TypeScript, React Router y Material UI para consumir la API oficial de Hacker News.
 
 ## Demostración
-[![Ver demostración](./technnical-interview.png)](https://www.youtube.com/watch?v=HHRT2v6wypQ)
+[[Ver demostración](./technnical-interview.png)](https://www.youtube.com/watch?v=HHRT2v6wypQ)
 
 ## Objetivo
 
@@ -142,7 +142,7 @@ Responsabilidades:
 - Componer layout, pagina principal, detalle y 404
 - Usar componentes de Material UI
 - Aplicar animaciones y microinteracciones
-- Memorizar componentes que se repiten (`StoryCard`, `CommentNodeCard`, `MetricCard`, `MetaChip`)
+- Memoizar componentes que se repiten (`StoryCard`, `CommentNodeCard`, `MetricCard`, `MetaChip`)
 
 ## Optimizaciones que puedes mencionar
 
