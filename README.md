@@ -1,6 +1,6 @@
 # Hacker News Technical Interview
 
-Aplicacion frontend construida con React, TypeScript, React Router y Material UI para consumir la API oficial de Hacker News.
+Aplicación frontend construida con React, TypeScript, React Router y Material UI para consumir la API oficial de Hacker News.
 
 ## Demostración
 [![Ver demostración](./technnical-interview.png)](https://www.youtube.com/watch?v=HHRT2v6wypQ)
@@ -45,11 +45,11 @@ La app cumple con estos puntos del challenge:
 
 La pantalla `/top`:
 
-- llama a `beststories.json`
-- limita el resultado a 200 ids
-- pagina esos ids en bloques de 50
-- para cada id consulta `item/:id.json`
-- muestra titulo, dominio, score, autor, tiempo y cantidad de comentarios
+- Llama a `beststories.json`
+- Limita el resultado a 200 ids
+- Página esos ids en bloques de 50
+- Para cada id consulta `item/:id.json`
+- Muestra titulo, dominio, score, autor, tiempo y cantidad de comentarios
 
 Esto vive principalmente en:
 
@@ -61,11 +61,11 @@ Esto vive principalmente en:
 
 La pantalla `/story/:id`:
 
-- toma el `id` desde la URL
-- consulta el `item` de esa historia
-- obtiene los ids de comentarios (`kids`)
-- construye un arbol de comentarios recursivamente
-- sanitiza el HTML de cada comentario con `DOMPurify`
+- Toma el `id` desde la URL
+- Consulta el `item` de esa historia
+- Obtiene los ids de comentarios (`kids`)
+- Construye un arbol de comentarios recursivamente
+- Sanitiza el HTML de cada comentario con `DOMPurify`
 
 Esto vive en:
 
@@ -84,9 +84,9 @@ Se usan dos niveles de resiliencia:
 
 Decisiones importantes:
 
-- el cache externo se limita a 10 respuestas, como pide la prueba
-- el shell de la app cachea `/` e `index.html`
-- las navegaciones offline caen sobre `index.html`, permitiendo que React Router resuelva la ruta
+- El caché externo se limita a 10 respuestas, como pide la prueba
+- El shell de la app cachea `/` e `index.html`
+- Las navegaciones offline caen sobre `index.html`, permitiendo que React Router resuelva la ruta
 
 Esto vive en:
 
@@ -101,10 +101,10 @@ Esto vive en:
 
 Responsabilidades:
 
-- centralizar endpoints
-- mapear respuestas crudas a modelos consistentes
-- hacer fallback a `localStorage`
-- evitar que falle toda la UI si una request individual falla
+- Centralizar endpoints
+- Mapear respuestas crudas a modelos consistentes
+- Hacer fallback a `localStorage`
+- Evitar que falle toda la UI si una request individual falla
 
 Nota para explicar:
 uso `Promise.allSettled` para que una historia o comentario fallido no rompa toda la pantalla.
@@ -115,22 +115,22 @@ uso `Promise.allSettled` para que una historia o comentario fallido no rompa tod
 
 Responsabilidades:
 
-- definir modelos crudos y modelos transformados
-- separar claramente `HackerNewsItem` de `StoryModel` y `CommentNodeModel`
+- Definir modelos crudos y modelos transformados
+- Separar claramente `HackerNewsItem` de `StoryModel` y `CommentNodeModel`
 
 ### Hooks
 
 [src/hooks/useBestStories.ts]
 
-- controla carga, refresh, error, fuente de datos y timestamp de la lista principal
+- Controla carga, refresh, error, fuente de datos y timestamp de la lista principal
 
 [src/hooks/useStoryComments.ts]
 
-- controla carga del detalle y comentarios por `storyId`
+- Controla carga del detalle y comentarios por `storyId`
 
 [src/hooks/useOnlineStatus.ts]
 
-- escucha eventos `online/offline` del navegador
+- Escucha eventos `online/offline` del navegador
 
 ### UI
 
@@ -138,17 +138,17 @@ Responsabilidades:
 
 Responsabilidades:
 
-- definir las rutas
-- componer layout, pagina principal, detalle y 404
-- usar componentes de Material UI
-- aplicar animaciones y microinteracciones
-- memoizar componentes que se repiten (`StoryCard`, `CommentNodeCard`, `MetricCard`, `MetaChip`)
+- Definir las rutas
+- Componer layout, pagina principal, detalle y 404
+- Usar componentes de Material UI
+- Aplicar animaciones y microinteracciones
+- Memorizar componentes que se repiten (`StoryCard`, `CommentNodeCard`, `MetricCard`, `MetaChip`)
 
 ## Optimizaciones que puedes mencionar
 
 - `React.memo` en componentes repetitivos
-- hooks separados para evitar mezclar UI con fetch
-- modelos tipados para no propagar la respuesta cruda de la API
+- Hooks separados para evitar mezclar UI con fetch
+- Modelos tipados para no propagar la respuesta cruda de la API
 - `Promise.allSettled` para tolerancia a fallos parciales
 - `localStorage` + Service Worker para experiencia offline mas robusta
 
