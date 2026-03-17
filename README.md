@@ -144,13 +144,6 @@ Responsabilidades:
 - Aplicar animaciones y microinteracciones
 - Memoizar componentes que se repiten (`StoryCard`, `CommentNodeCard`, `MetricCard`, `MetaChip`)
 
-## Optimizaciones que puedes mencionar
-
-- `React.memo` en componentes repetitivos
-- Hooks separados para evitar mezclar UI con fetch
-- Modelos tipados para no propagar la respuesta cruda de la API
-- `Promise.allSettled` para tolerancia a fallos parciales
-- `localStorage` + Service Worker para experiencia offline mas robusta
 
 
 ## Como correr el proyecto
